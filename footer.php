@@ -10,21 +10,44 @@
 global $tlhome;
 ?>
 	</div><!-- #content -->
-	<div class="container">
-		<footer  class="site-footer" role="contentinfo">
-			<?php if ( is_active_sidebar('footer-esq-tl') or is_active_sidebar('footer-dre-tl')): ?>	
-				<ul class="timeline <?php if($tlhome==1){echo "tl-footer";}elseif($tlhome==2){echo "timeline-nowidget";}else{ echo "timelinesingle";}?>">
-	        		<?php dynamic_sidebar( "footer-esq-tl" ); ?>
-	        		<?php dynamic_sidebar( "footer-dre-tl" ); ?>
-	        	</ul>
-	        <?php endif; ?>
-	    </footer>
-	</div><!-- container -->
-<?php wp_footer(); ?>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.carousel').carousel({interval: 20000});
-  });
-</script>
-</body>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<p class="text-uppercase"><strong>Segueix-nos</strong></p>
+					<div class="fb-like-box" data-href="https://www.facebook.com/pages/Xiquets-de-Cambrils/1378489135709376" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+					<a href="https://twitter.com/XiquetsCambrils" class="twitter-follow-button"  data-lang="es" data-show-count = "true" data-size="large">Follow @XiquetsCambrils</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+				<div class="col-md-6 text-right">
+					<p class="text-uppercase"><strong>Contacte i contractació</strong></p>
+					<address>
+					  <strong>Xiquets de Cambrils</strong><br>
+					  Carrer de Sant Plàcid, 18-20<br />
+					  Cambrils, 43850<br />
+					  <abbr title="Telèfon">T:</abbr> <br />
+					  xiquetsdecambrils@hotmail.com
+					</address>
+				</div>
+			</div>
+
+			<?php dynamic_sidebar( "footer" ); ?>
+
+				
+			<p class="text-center"><small>
+				<a href ="https://vcll.info/" title="Disseny web">Disseny web per VCLL</a>	·	<a href ="https://github.com/vcll/xiquetsCMB" title="Descarregar el tema del Wordpress"> Descàrrega a GitHub</a>	·	Llicència<a rel="license" href="http://www.gnu.org/licenses/gpl-3.0.txt"><img alt=" GPLv3" src="https://www.gnu.org/graphics/gplv3-88x31.png" title="Llicència del tema del Wordpress"/></a>	·	<a href ="https://wordpress.org/" title="Utilitzem Wordpress">Wordpress</a>	·	<a href ="https://wordpress.org/" title="Utilitzem Boostrap">Bootstrap</a> 
+			</small></p>
+		</div>
+	</footer>
+
+
+
+	<?php wp_footer(); ?>
+
+	<script type="text/javascript">
+	  $(document).ready(function() {
+	    $('.carousel').carousel({interval: 30000});
+	  });
+	</script>
+	</body>
 </html>

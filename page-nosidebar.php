@@ -1,6 +1,8 @@
 <?php
 /**
  * The Template for displaying all single posts.
+ * Template Name: No sidebar
+ * Description: Plantilla sense sidebar
  *
  * @author VCLL | https://vcll.info
  * @package Xiquets de Cambrils
@@ -8,11 +10,11 @@
 get_header(); ?>
 	<div class="container">
 
-		<ul class="timeline timeline-single">
+		<ul class="timeline timeline-unic">
 	      <?php if ( has_post_format( 'image' )):?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<li>
-		        <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="Publicat el <?php the_time('j \d\e\ F \d\e\ Y'); ?>" id=""></i></a></div>
+		        <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="" id=""></i></a></div>
 	        	<div class="timeline-panel">
 	        		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	        			<div class="timeline-heading">
@@ -21,7 +23,6 @@ get_header(); ?>
             			<div class="timeline-body">
             				<h4 class="timeline-title"><?php the_title();?></h4>
 		           			<div class="entry-meta">
-								<p><small class="text-muted"><span class="glyphicon glyphicon-time"></span> Publicat el <?php the_time('j \d\e\ F \d\e\ Y'); ?></small></p>
 							</div><!-- .entry-meta -->
 		    	   			<?php the_content(); ?>
 		    	   		</div>
@@ -47,7 +48,7 @@ get_header(); ?>
 	      <?php else: ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<li>
-		        <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="Publicat el <?php the_time('j \d\e\ F \d\e\ Y'); ?>" id=""></i></a></div>
+		        <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="" id=""></i></a></div>
 	        	<div class="timeline-panel">
 	        		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	        			<div class="timeline-heading">
@@ -56,7 +57,6 @@ get_header(); ?>
             			<div class="timeline-body">
             				<h1 class="timeline-title"><?php the_title();?></h1>
 		           			<div class="entry-meta">
-								<p><small class="text-muted"><span class="glyphicon glyphicon-time"></span> Publicat el <?php the_time('j \d\e\ F \d\e\ Y'); ?></small></p>
 							</div><!-- .entry-meta -->
 		    	   			<?php the_content(); ?>
 		    	   		</div>
@@ -70,7 +70,7 @@ get_header(); ?>
 				                        <i class="glyphicon glyphicon-share"></i> Comparteix <span class="caret"></span><span class="sr-only"></span>
 				                    </button>
 				                    <ul class="dropdown-menu">
-				                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" target="_blank"><span class="badge pull-right"> Facebook</a></li>
+				                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" target="_blank"> Facebook</a></li>
 				                        <li><a href="https://twitter.com/intent/tweet?text=<?php the_title();?>, <?php urlencode(the_permalink());?> Via @XiquetsCambrils" target="_blank"> Twitter</a></li>
 				                    </ul>
 				            	</div>
@@ -79,11 +79,6 @@ get_header(); ?>
 	       		</div>
 	        </li>
 	        <?php endwhile; endif;// end of the loop. ?>
-
-
-	        <?php if (is_dynamic_sidebar('single')): ?>
-	        <?php dynamic_sidebar('single'); ?>
-	        <?php endif; ?>
 	       	<?php
 			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || '0' != get_comments_number() ): ?>
