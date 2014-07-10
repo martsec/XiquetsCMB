@@ -1,26 +1,10 @@
-#blank-bootstrap-wp-theme
+#XiquetsCMB
 
-I created this theme as a starting point for my theme development, feel free to use it for your new projects.
+Aquest és el tema que he creat per la web dels Xiquets de Cambrils, una colla castellera del mateix poble. 
 
-I will be adding a few more javascript fixes and some more wp tags for navigation, side bars and other components that i use on all my projects.
+En principi és la versió final però es poden anar afegint pàgines i altres millores.
 
-
-
-
-###Header file includes
-* Bootstrap css and js plus responsive
-* Jquery js from google api
-* Menu
+Aquest disseny no és una idea meva, sinó que és una adaptació d'aquest: http://bootsnipp.com/snippets/featured/timeline-21-with-images-and-responsive
 
 
-###Index file includes
-* Main Wp loop
-* Sidebar
-
-###Function file include
-* Post thumbnails
-* Menu Support
-* registered sidebar
-* Gravity forms submit button bootstrap btn class
-
-Also find included is a [Espresso](http://macrabbit.com/espresso/) project file.
+Sou lliure de modificar i usar el tema com cregueu més convenient. 
