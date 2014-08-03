@@ -7,7 +7,6 @@
  * @author VCLL | https://vcll.info
  * @package Xiquets de Cambrils
  */
-global $tlhome;
 ?>
 	</div><!-- #content -->
 	<footer>
@@ -25,8 +24,8 @@ global $tlhome;
 					  <strong>Xiquets de Cambrils</strong><br>
 					  Carrer de Sant Plàcid, 18-20<br />
 					  Cambrils, 43850<br />
-					  <abbr title="Telèfon">T:</abbr> <br />
-					  xiquetsdecambrils@hotmail.com
+					  <abbr title="Telèfon">T:</abbr> +34 607084802 <br />
+					  xdc@xiquetsdecambrils.cat
 					</address>
 				</div>
 			</div>
