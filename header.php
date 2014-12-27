@@ -11,14 +11,17 @@
   global $page, $paged;
   wp_title( '|', true, 'right' );bloginfo( 'name' ); $site_description = get_bloginfo( 'description', 'display' );if ( $site_description && ( is_home() || is_front_page() ) )echo " | $site_description"; ?></title>
     <link rel="icon" type="image/png" href="<?php print get_stylesheet_directory_uri(); ?>/img/ico.png" />
-		<link href="<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="<?php bloginfo('stylesheet_url');?>" type="text/css" rel="stylesheet" media="screen, projection" />
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="<?php bloginfo('template_directory'); ?>/js/bootstrap.min.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/js/timeline.js"></script>		
-    <link href="<?php echo get_stylesheet_directory_uri(); ?>/style.php" rel="stylesheet" type="text/css" />
-
 		
+<script>
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+  loadCSS( "<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css" );
+  loadCSS( "<?php bloginfo('stylesheet_url');?>" );
+
+function loadJS( src ){"use strict";var ref = window.document.getElementsByTagName( "script" )[ 0 ];var script = window.document.createElement( "script" );script.src = src;ref.parentNode.insertBefore( script, ref );return script;}
+  loadJS("https://code.jquery.com/jquery.js");
+  loadJS("<?php bloginfo('template_directory'); ?>/js/bootstrap.min.js");
+  loadJS("<?php bloginfo('template_directory'); ?>/js/timeline.js");
+</script>    
 		<?php wp_head(); ?>
 		
     
@@ -33,15 +36,22 @@
           js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=202993516443772&version=v2.0";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-    <!-- PODER CANVIAR LES IMATGES AMB UN POST!!! COM AL REBROT-->
     <div class="carousel-inner">
     <div id="background-carousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-            <div class="active item" style="background-image:url(<?php print get_stylesheet_directory_uri(); ?>/img/fons1.jpg)"></div>
+<!--            <div class="active item" style="background-image:url(<?php print get_stylesheet_directory_uri(); ?>/img/fons1.jpg)"></div>
             <div class="item" style="background-image:url(<?php print get_stylesheet_directory_uri(); ?>/img/fons2.jpg)"></div>
             <div class="item" style="background-image:url(<?php print get_stylesheet_directory_uri(); ?>/img/fons3.jpg)"></div>
             <div class="item" style="background-image:url(<?php print get_stylesheet_directory_uri(); ?>/img/fons4.jpg)"></div>
-            <div class="item" style="background-image:url(<?php print get_stylesheet_directory_uri(); ?>/img/fons5.jpg)"></div>
+            <div class="item" style="background-image:url(<?php print get_stylesheet_directory_uri(); ?>/img/fons5.jpg)"></div> -->
+            <?php // Blog post query
+            query_posts( array( 'post_type' => 'post', 'showposts'=>5, 'cat=14') );
+            $i = 0;
+            if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+              <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+              <div class="item <?php if($i==0) echo 'active'; ?>" style="background-image:url(<?php echo $image[0]; ?>)">></div>
+            <?php $i=1; endwhile; endif; ?>
+
       </div>
     </div>
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><div class="logo"></div></a>

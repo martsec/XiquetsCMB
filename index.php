@@ -7,7 +7,8 @@
     <ul class="timeline">
     <?php dynamic_sidebar( "timeline-dre" ); ?>
     <?php dynamic_sidebar( "timeline-esq" ); ?>
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+    <?php query_posts( array('cat=-14') );
+      if ( have_posts() ) : while ( have_posts() ) : the_post();?>
 		<li <?php tlinverted(); ?> >
           <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="Publicat el <?php the_time('j \d\e\ F \d\e\ Y'); ?>" id=""></i></a></div>
           <div class="timeline-panel">

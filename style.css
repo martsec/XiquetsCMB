@@ -3,9 +3,9 @@ Theme Name: Castellers socials
 Theme URI: http://wordpress.org/themes/twentythirteen
 Author: the WordPress team
 Author URI: http://wordpress.org/
-Description: This is a blank bootstrap 3 theme for wordpress. Feel free to use this as a starter template for your projects.
-Version: 1.0
-License: GNU General Public License v2 or later
+Description: Tema pels Xiquets de Cambrils.
+Version: 2.1
+License: GNU General Public License v3 
 */
 body{
 	text-align: justify;
@@ -17,7 +17,20 @@ footer{
   background-color:rgba(255,255,255,1);
   padding-top:100px;
   margin-top:-10px;
+  background-image: url("https://xiquetsdecambrils.cat/wp-content/themes/XiquetsBO/img/footer.jpg");
+  background-repeat: repeat-x;
 }
+
+.video-container { 
+   position: relative; /* keeps the aspect ratio */ 
+   padding-bottom: 56.25%; /* fine tunes the video positioning */ 
+   padding-top: 60px; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
 .galetes{
   position: fixed;
   bottom:10px;
@@ -45,6 +58,7 @@ footer{
   background-size: 94% auto;
   background-repeat: no-repeat;
   z-index:10;
+  background-image: url("https://xiquetsdecambrils.cat/wp-content/themes/XiquetsBO/img/logo.png");
 }
 .logo:hover{
 	width: 170px;
@@ -316,6 +330,8 @@ a:focus {
     padding:20px;
     background-color:#ffffff;
     /* Background image a style.php */
+    background-image: url("https://xiquetsdecambrils.cat/wp-content/themes/XiquetsBO/img/tlfooter.jpg");
+    background-repeat: repeat-x;
 }
 .timeline-footer > a{
     cursor: pointer;
@@ -413,7 +429,7 @@ a:focus {
 
 @media (max-width: 767px) {
     ul.timeline:before {
-        left: 40px;
+        left: 5px;
     }
 
     ul.timeline > li {
@@ -424,13 +440,13 @@ a:focus {
       clear: left;
     }
     ul.timeline > li > .timeline-panel {
-        width: calc(100% - 90px);
-        width: -moz-calc(100% - 90px);
-        width: -webkit-calc(100% - 90px);
+        width: calc(100% - 30px);
+        width: -moz-calc(100% - 30px);
+        width: -webkit-calc(100% - 30px);
     }
 
     ul.timeline > li > .timeline-badge {
-        left: 28px;
+        left: -6px;
         margin-left: 0;
         top: 16px;
     }
@@ -461,7 +477,7 @@ a:focus {
 }
 
 .timeline > li.timeline-inverted > .timeline-badge{
-  left: 28px;
+  left: -6px;
 }
 }
   /*********************** TIMELINE SINGLE**********************/
